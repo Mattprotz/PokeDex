@@ -1,16 +1,26 @@
-
+*{
+    background-color: rgb(172, 178, 184);
+}
 ul{
     list-style-type: none;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0;
 }
 
 li{
-    margin: 10px;
+    margin: 17px;
 }
 
 button{
     border: 2px solid black;
     border-radius: 4px;
+}
+
+.button-class{
+    padding: 10px;
+    font-size: 24px;
+    background-color: lightcoral;
 }
