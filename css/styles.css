@@ -1,6 +1,11 @@
 *{
     background-color: rgb(172, 178, 184);
 }
+
+body{
+    font-family: 'Press Start 2P', cursive;
+}
+
 ul{
     list-style-type: none;
     display: flex;
@@ -23,4 +28,52 @@ button{
     padding: 10px;
     font-size: 24px;
     background-color: lightcoral;
+    font-family: 'Press Start 2P', cursive;
+    font-weight: 300;
+}
+
+#modal-container {
+    display: none;
+    
+  }
+  
+#modal-container.is-visible {
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; 
+    overflow: auto; 
+    display: grid;
+    text-align: center;
+  }
+.modal{
+    margin: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    background: #fff;
+    padding: 15px;
+    width: 100%;
+    max-width: 700px;
+    text-align: left;
+}
+.modal-close {
+    float: right;
+    -webkit-appearance: none;
+    border: 0;
+    background: none;
+    color: #777;
+    text-decoration: underline;
+    z-index: 999999;
+} 
+.modal h1 {
+    margin-top: 0;
+}
+  
+  .modal p {
+    margin-bottom: 0;
 }
