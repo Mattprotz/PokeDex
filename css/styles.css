@@ -53,13 +53,14 @@ button{
     max-height: 300px;
     position: fixed;
     text-align: center;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
+    
 }
 .modal-close {
     float: right;
-    -webkit-appearance: none;
+    appearance: none;
     border: 0;
     background: none;
     color: #777;
