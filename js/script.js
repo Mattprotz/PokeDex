@@ -1,9 +1,21 @@
+
+
 let pokemonRepository = (function () {
     let pokemonList = [];
     let addListItem;
     let apiUrl = "https://pokeapi.co/api/v2/pokemon/?limit=100";
   
     let modalContainer = document.querySelector("#modal-container");
+    let pokemonContainer = document.querySelector('#pokemon-container');
+    let listButton = document.querySelector('#pokemon-button');
+
+    function togglePokemonContainer(){
+      document.querySelector('.pokemon-list').classList.toggle('hidden');
+      console.log('clicked');
+    }
+    document.querySelector('.pokemon-list').classList.add('hidden');
+    listButton.addEventListener('click', togglePokemonContainer);
+
   
     function showModal(pokemon, title, text, imageURL) {
       modalContainer.innerHTML = "";
@@ -15,8 +27,8 @@ let pokemonRepository = (function () {
   
       let closeButtonElement = document.createElement("button");
       closeButtonElement.classList.add("modal-close");
-      closeButtonElement.innerText = "Close";
-      closeButtonElement.addEventListener("click", hideModal);
+      closeButtonElement.innerText = "CLOSE";
+      closeButtonElement.addEventListener('click', hideModal);
   
       let titleElement = document.createElement("h1");
       titleElement.innerText = pokemon.name;
@@ -123,6 +135,7 @@ let pokemonRepository = (function () {
           );
         });
       },
+      togglePokemonContainer: togglePokemonContainer
     };
   })();
   
