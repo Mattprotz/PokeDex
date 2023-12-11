@@ -9,6 +9,7 @@ let pokemonRepository = (function () {
     let pokemonContainer = document.querySelector('#pokemon-container');
     let listButton = document.querySelector('#pokemon-button');
    
+    // Button to open pokemon repository
     function togglePokemonContainer(){
       document.querySelector('.pokemon-list').classList.toggle('hidden');
       console.log('clicked');
