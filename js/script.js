@@ -19,6 +19,8 @@ let pokemonRepository = (function () {
 
     let uListItem = document.querySelector("ul");
   
+
+    //show modal with passed details
     function showModal(pokemon, title, text, imageURL) {
       modalContainer.innerHTML = "";
   
@@ -52,6 +54,7 @@ let pokemonRepository = (function () {
       modalContainer.classList.add("is-visible");
     }
   
+    //hide modal
     function hideModal() {
       modalContainer.classList.remove("is-visible");
     }
@@ -63,8 +66,23 @@ let pokemonRepository = (function () {
       }
     });
   
+    const searchBar = document.querySelector('#search');
+    searchBar.addEventListener('keyup', searchPokemon)
+
+    function searchPokemon(event){
+      const text = event.target.value.toLowerCase();
+
+      document.querySelectorAll('.pokemon-list').forEach(function(pokemon){
+        const pokemonName = pokemon.querySelector('').innerText
+        if(pokemonName.toLowerCase().indexOf('.') != -1){
+          pokemon.style.display = 'block'
+        }else{
+          pokemon.style.diplay = 'none'
+        }
+      })
+    }
   
-    //list of pokemon and interacticty onClick
+    //list of pokemon retrieval and interacticty onClick
     return {
       getAll: function () {
         return pokemonList;
@@ -141,29 +159,3 @@ let pokemonRepository = (function () {
       pokemonRepository.addListItem(pokemon);
     });
   });
-  
-  function newItem() {
-    let li = document.querySelector("li");
-    let inputValue = document.getElementById("input").value;
-    let text = document.createTextNode(inputValue);
-    li.appendChild(text);
-  
-    function crossOut() {
-      li.classList.toggle("strike");
-    }
-  
-    li.addEventListener("dblclick", crossOut);
-  
-    let crossOutButton = document.createElement("crossOutButton");
-    crossOutButton.appendChild(document.createTextNode("X"));
-    li.appendChild(crossOutButton);
-  
-    crossOutButton.addEventListener("click", deleteListItem);
-  
-    function deleteListItem() {
-      li.classList.add("delete");
-    }
-  
-    $("#list").sortable();
-  }
-  
