@@ -70,12 +70,17 @@ let pokemonRepository = (function () {
     searchBar.addEventListener('keyup', searchPokemon)
 
     function searchPokemon(event){
+      const listContainer = document.querySelector('.pokemon-list');
+      const listItems = Array.from(listContainer.querySelectorAll('li'));
       const text = event.target.value.toLowerCase();
 
-      document.querySelectorAll('.pokemon-list').forEach(function(pokemon){
-        const pokemonName = pokemon.querySelector('').innerText
-        if(pokemonName.toLowerCase().indexOf('.') != -1){
+      document.querySelectorAll('.pokemon-list li button').forEach(function(pokemon){
+        const pokemonName = pokemon.innerText.toLowerCase();
+
+        const listItem = pokemon.parentElement;
+        if(pokemonName.includes(text)){
           pokemon.style.display = 'block'
+          listContainer.insertBefore(listItem, listContainer.firstChild);
         }else{
           pokemon.style.diplay = 'none'
         }
