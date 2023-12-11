@@ -8,7 +8,7 @@ let pokemonRepository = (function () {
     let modalContainer = document.querySelector("#modal-container");
     let pokemonContainer = document.querySelector('#pokemon-container');
     let listButton = document.querySelector('#pokemon-button');
-
+   
     function togglePokemonContainer(){
       document.querySelector('.pokemon-list').classList.toggle('hidden');
       console.log('clicked');
@@ -16,18 +16,19 @@ let pokemonRepository = (function () {
     document.querySelector('.pokemon-list').classList.add('hidden');
     listButton.addEventListener('click', togglePokemonContainer);
 
+    let uListItem = document.querySelector("ul");
   
     function showModal(pokemon, title, text, imageURL) {
       modalContainer.innerHTML = "";
   
-      let uListItem = document.querySelector("ul");
+      
   
       let modal = document.createElement("div");
       modal.classList.add("modal");
   
       let closeButtonElement = document.createElement("button");
       closeButtonElement.classList.add("modal-close");
-      closeButtonElement.innerText = "CLOSE";
+      closeButtonElement.innerText = "close";
       closeButtonElement.addEventListener('click', hideModal);
   
       let titleElement = document.createElement("h1");
@@ -53,19 +54,14 @@ let pokemonRepository = (function () {
     function hideModal() {
       modalContainer.classList.remove("is-visible");
     }
-  
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modalContainer.classList.contains("is-visible")) {
-        hideModal();
-      }
-    });
-  
+
     modalContainer.addEventListener("click", (e) => {
       let target = e.target;
-      if (target === modalContainer) {
+      if (target === closeButtonElement && modalContainer.classList.contains("is-visible")) {
         hideModal();
       }
     });
+  
   
     //list of pokemon and interacticty onClick
     return {
