@@ -23,20 +23,41 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#">POKEDEX</a>
+      <button id="pokemon-button">POKEMON LIST</button>
+      <button id="list-button">ITEM LIST</button>
+      <button id="profile-button">PROFILE</button>
     </nav>
     <div class="container-fluid">
       <div class="row">
-          <div class="col-sm" id="pokemon-container">
-            <button id="pokemon-button">POKEMON LIST</button>
-              <div id="modal-container"></div>
-              
-              <ul class="pokemon-list hidden">
-                <div id="search-bar">
-                  <input type="text" name="search" id="search" placeholder="Search Pokemon...">
-                </div>
-              </ul> 
-              
+
+        <!-- console view -->
+        <div class="col-sm" id="console-container">
+          <div class="console-display">
+              <h1>POKEMON DATA</h1>
+            <div id="modal-container"></div>
+          </div>
+        </div>
+        
+        <!-- item view -->
+            <div class="col-sm" id="item-container">
+
             </div>
+
+        <!-- pokemon view -->
+          <div class="col-sm" id="pokemon-container">
+            <ul class="pokemon-list hidden">
+              <div id="search-bar">
+                <input type="text" name="search" id="search" placeholder="Search Pokemon...">
+              </div>
+            </ul> 
+          
+          </div>
+
+        <!-- profile view -->
+            <div class="col-sm" id="profile-container">
+
+            </div>
+
       </div>
   </div>
       <!-- any element added to html must go above this line -->
