@@ -1,5 +1,12 @@
 
 
+let itemRepository = (function(){
+  let itemList = [];
+  let addItemItem;
+  let itemApiUrl = 'https://pokeapi.co/api/v2/item/?limit=50'
+ 
+})
+
 let pokemonRepository = (function () {
     let pokemonList = [];
     let addListItem;
@@ -66,6 +73,7 @@ let pokemonRepository = (function () {
       }
     });
   
+    //search bar 
     const searchBar = document.querySelector('#search');
     searchBar.addEventListener('keyup', searchPokemon)
 
